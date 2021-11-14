@@ -1,0 +1,39 @@
+<div class="container1">
+  <img src="../../assets/logo.png" alt=""> 
+</div>
+<div class="container">
+  <div *ngIf="isShown" id="divshow">
+     <p id="p1">No of Seats:{{p}} </p>
+     <p id="p1">Rate per person:{{r}} </p>
+     <p id="p1">Total amount:{{pr}} </p>
+     <div class="book"><input type="button" value="Block seats" (click)="block()"></div>
+     <div class="modal-container">
+      <input id="modal-toggle" type="checkbox">
+      <button>Confirm & pay</button>
+      <div class="modal-backdrop">
+        <div class="modal-content">
+          <label class="modal-close" for="modal-toggle">x</label>
+          <h2>confirm & pay</h2>
+          <hr />
+          <p id="p1">No of Seats:{{p}} </p>
+          <p id="p1">Total amount:{{pr}} </p>
+          <p id="p1">Timings:{{dateobj}} </p>
+          <label class="modal-close button" for="modal-toggle">Close</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+ <div class="container_fluid">
+
+  <div class="container1">
+      <div class="cnt">
+        <div *ngFor="let i of arr" [ngClass]="{'notAvailable' : toggle[i],'available':true,'booked':permpselect[i]}" (click)="book(i)">{{i}}</div>
+      </div>
+ </div>
+  </div>  
+  <P id="p2">SCREEN</P>
+ 
+</div>
+<app-ram></app-ram>
